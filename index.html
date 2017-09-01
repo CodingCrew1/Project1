@@ -5,7 +5,8 @@
         <meta charset="utf-8">
         <title></title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-       
+        <!-- style sheet to override bootstrap -->
+        <link rel="stylesheet" href="assets/css/style.css">
    </head>
    <body>
   
@@ -24,36 +25,26 @@
     </div>
 </header>
 
-
 <!-- Begin Navbar -->
 <div id="nav">
     <div class="navbar navbar-default navbar-static">
         <div class="container">
-            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-            <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="glyphicon glyphicon-bar"></span>
-                <span class="glyphicon glyphicon-bar"></span>
-                <span class="glyphicon glyphicon-bar"></span>
-            </a>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
-                </ul>
-                <ul class="nav pull-right navbar-nav">
-                    <li>
-                        <form class="navbar-form">
-                            <input type="text" class="form-control" placeholder="City">
-                             <input type="text" class="form-control" placeholder="Category">
-                            <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
-                        </form>
-                    </li>
-                    <li>
-                        <a href="#"><i class="glyphicon glyphicon-flag"></i> <span class="badge">2</span></a>
-                    </li>
-                </ul>
+              <ul class="nav navbar-nav">
+              <!-- <ul class="nav pull-right navbar-nav"> -->
+                <li>
+                  <form class="navbar-form">
+                    <input type="text" class="form-control" placeholder="Event Category">
+                    <input type="text" class="form-control" placeholder="Event Location (eg. Cleveland, OH)">
+                    <input type="text" class="form-control" placeholder="Start Date (Optional)">
+                    <input type="text" class="form-control" placeholder="End Date (Optional)">
+                    <!-- submit button -->
+                    <button type="submit" class="btn btn-default" id="run-search"><i class="glyphicon glyphicon-search"></i></button>
+                    <!-- clear button -->
+                    <button type="button" class="btn btn-default" id="clear-all"><i class="glyphicon glyphicon-trash"></i></button>
+                  </form>
+                </li>
+              </ul>
             </div>
         </div>
     </div>
@@ -65,10 +56,6 @@
       <!-- Put anything you want here! There is just a spacer below for demo purposes! -->
       <div style="height: 400px;"></div>
     </section>
-
-
-
-
 
       <!-- Page Heading -->
       <h1 class="my-4">EVENTS
