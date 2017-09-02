@@ -1,61 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+  <html lang ="en">
+    <head>
 
-<head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-</head>
-
-<body>
-    <header class="masthead">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-6">
-                    <h1><a href="#" title="scroll down for your viewing pleasure">EVENT APP</a></h1>
-                </div>
-                <div class="col-xs-6">
-                    <div class="pull-right hidden-sm">
-                        <h1><a href="#"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a></h1>
-                    </div>
-                </div>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        
+        <!-- style sheet to override bootstrap -->
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+   </head>
+   <body>
+<div class="container"> 
+<header class="masthead">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-6">
+                <h1><a href="#" title="scroll down for your viewing pleasure">EVENT APP</a></h1>
             </div>
         </div>
-    </header>
-    <!-- Begin Navbar -->
-    <div id="nav">
-        <div class="navbar navbar-default navbar-static">
-            <div class="container">
-                <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-                <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="glyphicon glyphicon-bar"></span>
-                <span class="glyphicon glyphicon-bar"></span>
-                <span class="glyphicon glyphicon-bar"></span>
-            </a>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                    </ul>
-                    <ul class="nav pull-right navbar-nav">
-                        <li>
-                            <form class="navbar-form">
-                                <input type="text" class="form-control" id="eventLocation" placeholder="Location" value="Cleveland">
-                                <input type="text" class="form-control" id="eventKeywords" placeholder="Keywords" value="music">
-                                <button type="submit" class="btn btn-default" id="submitInfo"><i class="glyphicon glyphicon-search"></i></button>
-                            </form>
-                        </li>
-                        <li>
-                            <a href="#"><i class="glyphicon glyphicon-flag"></i> <span class="badge">2</span></a>
-                        </li>
-                    </ul>
-                </div>
+    </div>
+</header>
+</div>
+
+<!-- Begin Navbar -->
+<div id="nav">
+    <div class="navbar navbar-default navbar-static">
+        <div class="container">
+            <div class="navbar">
+            <!-- <div class="navbar-collapse collapse"> -->
+              <ul class="nav navbar-nav">
+              <!-- <ul class="nav pull-right navbar-nav"> -->
+                  <form class="navbar-form form-inline">
+                    <li>
+                      <h1 id="find" class="py-5" title="find an event in your chosen city">FIND</h1>
+                        <input type="text" id="eventKeywords" class="form-control search-form-text" placeholder="Event Category">
+                        <input type="text" id="eventLocation" class="form-control search-form-text" placeholder="Event Location">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                          <div class="input-group-addon">DATE</div>
+                          <select class="form-control" id="num-records-select">
+                            <option value="Future" selected>Future</option>
+                            <option value="Today">Today</option>
+                            <option value="This Week">This Week</option>
+                            <option value="Next Week">Next Week</option>
+                          </select>
+                        </div>
+                        <!-- submit button -->
+                        <button type="submit"  id="submitInfo" class="btn btn-default search-form-btn" id="run-search"><i class="glyphicon glyphicon-search"></i></button>
+                        <!-- clear button -->
+                        <button type="button" class="btn btn-default search-form-btn" id="clear-all"><i class="glyphicon glyphicon-trash"></i></button>
+                    </li>
+                  </form>
+              </ul>
+            <!-- </div> -->
             </div>
         </div>
-        <!-- /.navbar -->
-        </nav>
+    </div>
+    <!-- /.navbar -->
+</nav>
         <div class="container">
             <section class="py-5 bg-image-full" style="background-image: url('http://cache.wizardworld.com/files/hero/_1200x630_fit_center-center_100/WW-cleveland.jpg');">
                 <!-- Put anything you want here! There is just a spacer below for demo purposes! -->
