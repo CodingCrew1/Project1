@@ -18,19 +18,23 @@ $("#submitInfo").on("click", function(event) {
 
     var eventLocation = $("#eventLocation").val().trim();
     var eventKeywords = $("#eventKeywords").val().trim();
-    eventSearch(eventLocation, eventKeywords);
+    var eventDate = $("#dateDropDown :selected").text();
+
+    console.log(eventDate);
+    eventSearch(eventLocation, eventKeywords, eventDate);
     var event = {
         location: eventLocation,
-        keywords: eventKeywords
+        keywords: eventKeywords,
+        date: eventDate
     };
 });
-
 //for search querys
-function eventSearch(location, keywords) {
+function eventSearch(location, keywords, date) {
     $("#searchLocation").text(location);
     var searchQueryParams = {
         location: location,
         keywords: keywords,
+        date: date,
         app_key: "3wKwrHtr35ZbcRWR"
     }
     EVDB.API.call("/events/search", searchQueryParams, function(data) {
@@ -54,9 +58,15 @@ function updateSearchResults(events) {
             eventDiv.append(image);
         }
         if (events[i].title != null) {
-            var venue = events[i].title;
-            var pHeader = $("<H2>").text(venue);
+            var title = events[i].title;
+            var pHeader = $("<H2>").text(title);
             eventDiv.append(pHeader);
+        }
+        if (events[i].start_time != null) {
+            var startTime = events[i].start_time;
+            var formattedTime = moment(startTime).format('MMMM Do YYYY, h:mm a');
+            var pFive = $("<H4>").text(formattedTime);
+            eventDiv.append(pFive);
         }
         if (events[i].venue_name != null) {
             var venue = events[i].venue_name;
