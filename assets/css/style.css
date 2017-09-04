@@ -1,7 +1,11 @@
 #find {
 	display: block;
 }
-.footer-container{
+#photo {
+	background-image: url('http://cache.wizardworld.com/files/hero/_1200x630_fit_center-center_100/WW-cleveland.jpg');
+	height: 400px;
+}
+.footer-container, #searchResultsRow {
 	background:teal;
 	color:white;
 	border-radius:25px;
@@ -10,7 +14,7 @@
 }
 .well{
 	background:teal;
-	border-radius:25px;
+	border-radius: 25px;
 	border: 2px solid black;
 }
 .input-form{
@@ -25,9 +29,3 @@
 	padding-right:10px;
 	padding-top:10px;
 }
-/*.search-form-text {
-	width: 25%;
-}
-.search-form-btn {
-	width: 10%;
-}*/
