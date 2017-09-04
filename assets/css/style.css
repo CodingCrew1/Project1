@@ -1,6 +1,30 @@
 #find {
 	display: block;
 }
+.footer-container{
+	background:teal;
+	color:white;
+	border-radius:25px;
+	border: 2px solid black;
+	font-family:lucida;
+}
+.well{
+	background:teal;
+	border-radius:25px;
+	border: 2px solid black;
+}
+.input-form{
+	background:orange;
+	border-radius:25px;
+	border: 2px solid white;
+	color:black;
+	font-family:lucida;
+	width:40%;
+	padding-left:10px;
+	padding-bottom:10px;
+	padding-right:10px;
+	padding-top:10px;
+}
 /*.search-form-text {
 	width: 25%;
 }
