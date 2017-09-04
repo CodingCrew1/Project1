@@ -1,3 +1,18 @@
+var randomCities = ["Cleveland", "Pittsburgh", "Chicago", "Detroit", "San Antonio", "Los Angeles"];
+var randomKeywords = ["music", "sports", "comedy"];
+
+var generateRandomCity = function() {
+    return randomCities[Math.floor(Math.random() * randomCities.length)];
+};
+var randomCity = generateRandomCity();
+
+var generateRandomKeyword = function() {
+    return randomKeywords[Math.floor(Math.random() * randomKeywords.length)];
+};
+var randomKeyword = generateRandomKeyword();
+
+eventSearch(randomCity, randomKeyword);
+
 $("#submitInfo").on("click", function(event) {
     event.preventDefault();
 
@@ -9,6 +24,7 @@ $("#submitInfo").on("click", function(event) {
         keywords: eventKeywords
     };
 });
+
 //for search querys
 function eventSearch(location, keywords) {
     $("#searchLocation").text(location);
@@ -37,7 +53,7 @@ function updateSearchResults(events) {
             var image = $("<img>").attr("src", imgUrl);
             eventDiv.append(image);
         }
-         if (events[i].title != null) {
+        if (events[i].title != null) {
             var venue = events[i].title;
             var pHeader = $("<H2>").text(venue);
             eventDiv.append(pHeader);
