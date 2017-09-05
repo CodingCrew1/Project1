@@ -4,28 +4,30 @@
 #photo {
 	background-image: url('http://cache.wizardworld.com/files/hero/_1200x630_fit_center-center_100/WW-cleveland.jpg');
 	height: 400px;
+	border-radius: 25px;
 }
-.footer-container, #searchResultsRow {
-	background:teal;
-	color:white;
-	border-radius:25px;
-	border: 2px solid black;
+#belowPhoto, .input-form {
+	background: wheat;
+	color: #104E8B;
+	border-radius: 25px;
 	font-family:lucida;
 }
-.well{
-	background:teal;
+.footer-container {
+	background: black;
+	color: white;
 	border-radius: 25px;
 	border: 2px solid black;
-}
-.input-form{
-	background:orange;
-	border-radius:25px;
-	border: 2px solid white;
-	color:black;
 	font-family:lucida;
-	width:40%;
-	padding-left:10px;
-	padding-bottom:10px;
-	padding-right:10px;
-	padding-top:10px;
+}
+.well {
+	background-image: url('http://cache.wizardworld.com/files/hero/_1200x630_fit_center-center_100/WW-cleveland.jpg');
+	border-radius: 25px;
+}
+.input-form {
+	width: 40%;
+	padding: 10px;
+}
+img {
+	border-radius: 25px;
+	/*border: 2px solid #104E8B;*/
 }
