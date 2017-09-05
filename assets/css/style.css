@@ -1,3 +1,18 @@
+body{
+	background:#c61f41;
+}
+.home-return{
+	color:white;
+}
+a:hover {
+	font-size:120%;
+	color:white;
+ }
+ .font{
+ 	font-weight:bold;
+ 	color:#c61f41;
+ 	font-family:Lucida;
+ }
 #find {
 	display: block;
 }
@@ -5,29 +20,65 @@
 	background-image: url('http://cache.wizardworld.com/files/hero/_1200x630_fit_center-center_100/WW-cleveland.jpg');
 	height: 400px;
 	border-radius: 25px;
+	border: 2px solid white;
 }
-#belowPhoto, .input-form {
+#belowPhoto {
 	background: wheat;
 	color: #104E8B;
 	border-radius: 25px;
+	border: 2px solid white;
 	font-family:lucida;
 }
 .footer-container {
 	background: black;
 	color: white;
-	border-radius: 25px;
+	
 	border: 2px solid black;
 	font-family:lucida;
 }
 .well {
 	background-image: url('http://cache.wizardworld.com/files/hero/_1200x630_fit_center-center_100/WW-cleveland.jpg');
 	border-radius: 25px;
+	border:2px solid white;
 }
 .input-form {
-	width: 40%;
+	width: 100%;
+	padding: 10px;
+	background: wheat;
+	color: #104E8B;
+	border-radius: 25px;
+	border: 2px solid #c61f41;
+	font-family:lucida;
+}
+.subscribe-text{
+	font-weight:bold;
+	font-family:Lucida;
+	color:#c61f41;
+	text-align:center;
+}
+.input-field{
+	position:absolute;
+	left:30%;
+	top:35%;
+	margin-right:30px;
+
+}
+.comment-form{
+	position:absolute;
+	top:20px;
+	right:100px;
+	background: wheat;
+	color: #104E8B;
+	border-radius: 25px;
+	border: 2px solid #c61f41;
+	font-family:lucida;
+    width: 40%;
 	padding: 10px;
 }
 img {
 	border-radius: 25px;
 	/*border: 2px solid #104E8B;*/
+}
+.page-link{
+	background:blue;
 }
