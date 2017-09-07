@@ -1,128 +1,115 @@
 <!DOCTYPE html>
-  <html lang ="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        
-        <title>EVENT APP | DETAILS</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        
-        <!-- style sheet to override bootstrap -->
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    </head>
-    <body>
+<html lang="en">
 
-<!-- Master header -->    
-<div class="container"> 
-  <header class="masthead">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-6">
-          <h1><a class="home-return" href="index.html" title="scroll down for your viewing pleasure">EVENT APP</a></h1>
-        </div>
-      </div>
-    </div>
-  </header>
-</div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EVENT APP | DETAILS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- style sheet to override bootstrap -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
 
-<!-- Cleveland Photo -->
-<div class="container">
-  <section id="photo" class="py-5 bg-image-full">
-  </section>
-  <br />
-  <br />
-  <!-- Below photo -->
-  <div id="belowPhoto" class="well">
-  <h1 id="titleRow" class="font">Event Title</h1>
-    <h3 class="font">Near 
-      <span id="searchLocation">...</span>
-    </h3>
-  <!-- Details area -->   
-  <div class="row" id="eventDescriptionRow">
-         
-       
-        <div class="col-md-3">
-          <img class="img-event" src="http://placehold.it/200x200" alt="Image of Event">
-        </div>
-         
-        <div class="col-md-4">
-          <h3 class="event-description">Event Description</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-          <h3 class="event-details">Event Details</h3>
-          <ul>
-            <li>Lorem Ipsum</li>
-            <li>Dolor Sit Amet</li>
-            <li>Consectetur</li>
-            <li>Adipiscing Elit</li>
-          </ul>
-        </div>
-
-        <div class="col-md-5">
-         <h2 class="font">Directions to Event</h2>
-          <img class="map-event" src="http://placehold.it/350x350" alt="Map of Event">
-          <!-- Pagination -->
+<body>
+    <!-- Master header -->
     <div class="container">
-    <ul class="pagination pagination-lg">
-      <li class="page-item">
-        <a class="page-link" href="index.html" aria-label="Previous">
+        <header class="masthead">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h1><a class="home-return" href="index.html" title="scroll down for your viewing pleasure">EVENT APP</a></h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <!-- Cleveland Photo -->
+    <div class="container">
+        <section id="photo" class="py-5 bg-image-full">
+        </section>
+        <br />
+        <br />
+        <!-- Below photo -->
+        <div id="belowPhoto" class="well">
+            <h1 id="titleRow" class="font"></h1>
+            <h2 id="startTime" class="font"></h2>
+            <!-- Details area -->
+            <div class="row" id="eventDescriptionRow">
+                <div class="col-md-3">
+                    <img class="img-event" src="http://placehold.it/200x200" alt="Image of Event">
+                </div>
+                <div class="col-md-4">
+                    <h3 class="event-details" id="eventDetails">Event Details</h3>
+                  
+                    <h3 class="event-description" id="eventDescription">Event Description</h3>
+                </div>
+                <div class="col-md-5">
+                    <h2 class="font">Directions to Event</h2>
+                    <img class="map-event" src="http://placehold.it/350x350" alt="Map of Event">
+                    <!-- Pagination -->
+                    <div class="container">
+                        <ul class="pagination pagination-lg">
+                            <li class="page-item">
+                                <a class="page-link" href="index.html" aria-label="Previous">
           <span aria-hidden="true">&laquo; Return to 
             <span id="eventKeywords">Featured Events </span>
                 near
               <span id="searchLocation">...</span>
           </span>
         </a>
-      </li>
-    </ul>
-    </div>
-         </div>
-  </div>
-  </div>
-  </div>
-<br />
-<br />
-<!--email-input-->
-<section>
-  <div class="container">
-    <div class="row">
-      <div class=" col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 ">
-        <div class="well">
-          <form action="#">
-            <div class="input-form">
-              <h4 class="subscribe-text">SUBSCRIBE FOR FUTURE EVENTS</h4>
-              <br><br>
-              <div class="input-field">
-                <input class="btn btn-lg" name="email" id="email" type="email" placeholder="Enter Email Here" required>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <br><br>
-                <a href="#" class="btn btn-info btn-lg">
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <!--email-input-->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class=" col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 ">
+                    <div class="well">
+                        <form action="#">
+                            <div class="input-form">
+                                <h4 class="subscribe-text">SUBSCRIBE FOR FUTURE EVENTS</h4>
+                                <br>
+                                <br>
+                                <div class="input-field">
+                                    <input class="btn btn-lg" name="email" id="email" type="email" placeholder="Enter Email Here" required>
+                                </div>
+                                <br>
+                                <br>
+                                <a href="#" class="btn btn-info btn-lg">
                   <span class="glyphicon glyphicon-envelope"></span> SUBMIT
                 </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-          </form>
         </div>
-      </div>
+    </section>
+    <!-- Footer -->
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <footer class="py-5 bg-dark">
+                <div class="footer-container">
+                    <p class="m-0 text-center text-white">Copyright &copy; CodingCrew Event App 2017</p>
+                </div>
+            </footer>
+        </div>
     </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <footer class="py-5 bg-dark">
-      <div class="footer-container">
-        <p class="m-0 text-center text-white">Copyright &copy; CodingCrew Event App 2017</p>
-      </div>
-    </footer>
-  </div>
-</div>
-
     <!-- scripts -->
     <script type="text/javascript" src="http://api.eventful.com/js/api"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/javascript/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="assets/javascript/details.js"></script>
 </body>
+
 </html>
