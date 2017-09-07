@@ -109,7 +109,9 @@ function updateSearchResults(events) {
         if (events[i].region_name != null) {
             var region = events[i].region_name;
             var pFour = $("<p>").text(region);
+            var button = $("<button>").addClass("choose-button").text("Choose this Event!");
             eventDiv.append(pFour);
+            eventDiv.append(button);
         }
 
         $("#searchResultsRow").append(eventDiv);
