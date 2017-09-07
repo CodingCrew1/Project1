@@ -17,10 +17,16 @@ a:hover {
 	display: block;
 }
 #photo {
-	background-image: url('http://cache.wizardworld.com/files/hero/_1200x630_fit_center-center_100/WW-cleveland.jpg');
-	height: 400px;
-	border-radius: 25px;
-	border: 2px solid white;
+    background-image: url('http://cache.wizardworld.com/files/hero/_1200x630_fit_center-center_100/WW-cleveland.jpg');
+    height: 300px;
+    border-radius: 25px;
+    border: 2px solid white;
+}
+#details-photo {
+    background-image: url('https://mavenprodcontent.blob.core.windows.net/media/houseofblues_dal/ImageGalleryWidget/Special_Events_Slider/specialevents_slide02_fans.jpg');
+    height: 300px;
+    border-radius: 25px;
+    border: 2px solid white;
 }
 #belowPhoto {
 	background: wheat;
