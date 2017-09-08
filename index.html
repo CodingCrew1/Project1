@@ -46,8 +46,22 @@
                                 <li>
                                     <h1 id="find" class="py-5" title="find an event in your chosen city">FIND</h1>
                                     <!-- input boxes -->
-
-                                    <input type="text" id="eventKeywords" class="form-control search-form-text" placeholder="Event Keywords">
+                                    <!-- Event categories -->
+                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                        <div class="input-group-addon">Event categories</div>
+                                        <select class="form-control" id="categoriesDropDown">
+                                            <option value="Comedy">Comedy</option>
+                                            <option value="Concerts">Concerts</option>
+                                            <option value="Conferences & Tradeshows">Conferences &amp; Tradeshows</option>
+                                            <option value="Festivals">Festivals</option>
+                                            <option value="Food & Wine" selected>Food &amp; Wine</option>
+                                            <option value="Kids & Family">Kids &amp; Family</option>
+                                            <option value="Nightlife & Singles">Nightlife &amp; Singles</option>
+                                            <option value="Performing Arts">Performing Arts</option>
+                                            <option value="Sports">Sports</option>
+                                        </select>
+                                    </div>
+                                    <!-- Event location -->
                                     <input type="text" id="eventLocation" class="form-control search-form-text" placeholder="Event Location">
                                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                         <div class="input-group-addon">DATE</div>
@@ -60,8 +74,6 @@
                                     </div>
                                     <!-- submit button -->
                                     <button type="submit" id="submitInfo" class="btn btn-default search-form-btn" id="run-search"><i class="glyphicon glyphicon-search"></i></button>
-                                    <!-- clear button -->
-                                    <button type="button" class="btn btn-default search-form-btn" id="clear-all"><i class="glyphicon glyphicon-trash"></i></button>
                                 </li>
                             </form>
                         </ul>
