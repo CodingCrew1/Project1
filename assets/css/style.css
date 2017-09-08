@@ -1,5 +1,6 @@
 body{
-	background: white;
+	/*background: white;*/
+  background-image: url('http://www.bing.com/images/search?view=detailV2&ccid=bqrGh8uw&id=FCA1BB169F9EFB19C2D6317E944F6D0548F23B30&thid=OIP.bqrGh8uwgZdsdddJ3KVneQECDx&q=subtle+patterns+background+city&simid=607988704504122410&selectedindex=111&mode=overlay&first=1');
 }
 .home-return{
 	color: white;
@@ -27,14 +28,16 @@ a:hover {
   border-radius: 25px;
 }
 #belowPhoto {
-  background: #5C97FF;
+  /*background: #5C97FF;*/
+  /*background: #85857C;*/
+  /*background: #ACAFB4;*/
+  background: #FFFAF7;
   overflow: hidden;
-	color: #ACAFB4;
 	border-radius: 25px;
 	font-family:lucida;
 }
 #belowPhoto:before {
-	content: ' ';
+  content: ' ';
   display: block;
   position: absolute;
   left: 0;
@@ -42,9 +45,8 @@ a:hover {
   width: 100%;
   height: 100%;
   z-index: 2;
-  opacity: 0.6;
-  background: url('http://cdn2.bigcommerce.com/server2900/qlqdgd7/products/534/images/1710/GIRLY_BITS_irid_blue_green_015__02003.1368552204.1280.1280.JPG?c%5Cx3d2');
-  /*background: #85857C;*/
+  opacity: 0.3;
+  background: url('http://cache.wizardworld.com/files/hero/_1200x630_fit_center-center_100/WW-cleveland.jpg');
   background-position: 50% 0;
   -ms-background-size: cover;
   -o-background-size: cover;
@@ -57,6 +59,7 @@ a:hover {
 #belowPhoto h2,
 #belowPhoto h3,
 #searchResultsRow,
+#searchLocation,
 #eventDescriptionRow {
 	color: black;
 	z-index: 2;
@@ -93,7 +96,6 @@ a:hover {
 	left:30%;
 	top:35%;
 	margin-right:30px;
-
 }
 .comment-form{
 	position:absolute;
