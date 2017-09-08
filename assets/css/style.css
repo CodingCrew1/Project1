@@ -20,50 +20,47 @@ a:hover {
     background-image: url('http://cache.wizardworld.com/files/hero/_1200x630_fit_center-center_100/WW-cleveland.jpg');
     height: 300px;
     border-radius: 25px;
-    border: 2px solid white;
 }
 #details-photo {
-    background-image: url('https://mavenprodcontent.blob.core.windows.net/media/houseofblues_dal/ImageGalleryWidget/Special_Events_Slider/specialevents_slide02_fans.jpg');
-    height: 300px;
-    border-radius: 25px;
-    border: 2px solid white;
+  background-image: url('https://mavenprodcontent.blob.core.windows.net/media/houseofblues_dal/ImageGalleryWidget/Special_Events_Slider/specialevents_slide02_fans.jpg');
+  height: 300px;
+  border-radius: 25px;
 }
 #belowPhoto {
-	position: relative;
-    background: #5C97FF;
-    overflow: hidden;
+  background: #5C97FF;
+  overflow: hidden;
 	color: #ACAFB4;
 	border-radius: 25px;
-	border: 2px solid white;
 	font-family:lucida;
 }
 #belowPhoto:before {
 	content: ' ';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    opacity: 0.6;
-    background: url('http://cdn2.bigcommerce.com/server2900/qlqdgd7/products/534/images/1710/GIRLY_BITS_irid_blue_green_015__02003.1368552204.1280.1280.JPG?c%5Cx3d2');
-    /*background: #85857C;*/
-    background-position: 50% 0;
-    -ms-background-size: cover;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    background-size: cover;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0.6;
+  background: url('http://cdn2.bigcommerce.com/server2900/qlqdgd7/products/534/images/1710/GIRLY_BITS_irid_blue_green_015__02003.1368552204.1280.1280.JPG?c%5Cx3d2');
+  /*background: #85857C;*/
+  background-position: 50% 0;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
-#belowPhoto h1, #belowPhoto h3 {
-	position: relative;
-	z-index: 2;
-}
-#searchResultsRow {
+#belowPhoto,
+#belowPhoto h1, 
+#belowPhoto h2,
+#belowPhoto h3,
+#searchResultsRow,
+#eventDescriptionRow {
 	color: black;
 	z-index: 2;
-    position: relative;
+  position: relative;
 }
 .footer-container {
 	background: black;
@@ -107,7 +104,7 @@ a:hover {
 	border-radius: 25px;
 	border: 2px solid #c61f41;
 	font-family:lucida;
-    width: 40%;
+  width: 40%;
 	padding: 10px;
 }
 img {
@@ -115,7 +112,7 @@ img {
 	/*border: 2px solid #104E8B;*/
 }
 .page-link{
-	background:blue;
+	background: blue;
 }
 .choose-button {
    position: relative;
