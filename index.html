@@ -12,9 +12,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- style sheet to override bootstrap -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
     <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
 </head>
 
 <body>
@@ -34,93 +33,90 @@
     <!-- Cleveland Photo -->
     <div class="container">
         <section id="photo" class="py-5 bg-image-full">
-    <!-- Navbar with search form -->
-    <div class="container-fluid">
-        <div id="nav">
-            <div class="navbar navbar-static">
-                <div class="container">
-                    <div class="navbar">
-                        <!-- <div class="navbar-collapse collapse"> -->
-                        <ul class="nav navbar-nav">
-                            <!-- <ul class="nav pull-right navbar-nav"> -->
-                            <form class="navbar-form form-inline">
-                                <li>
-                                    <h1 id="find" class="py-5" title="find an event in your chosen city">Find Events</h1>
-                                    <!-- input boxes -->
-                                    <!-- Event categories -->
-                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                        <div class="input-group-addon">Event categories</div>
-                                        <select class="form-control" id="categoriesDropDown">
-                                            <option value="Comedy">Comedy</option>
-                                            <option value="Concerts">Concerts</option>
-                                            <option value="Conferences">Conferences</option>
-                                            <option value="Festivals">Festivals</option>
-                                            <option value="Food" selected>Food</option>
-                                            <option value="Family">Family</option>
-                                            <option value="Nightlife">Nightlife</option>
-                                            <option value="Performing Arts">Performing Arts</option>
-                                            <option value="Sports">Sports</option>
-                                        </select>
-                                    </div>
-                                    <!-- Event location -->
-                                    <input type="text" id="eventLocation" class="form-control search-form-text" placeholder="Event Location">
-                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                        <div class="input-group-addon">DATE</div>
-                                        <select class="form-control" id="dateDropDown">
-                                            <option value="Future" selected>Future</option>
-                                            <option value="Today">Today</option>
-                                            <option value="This Week">This Week</option>
-                                            <option value="Next Week">Next Week</option>
-                                        </select>
-                                    </div>
-                                    <!-- submit button -->
-                                    <button type="submit" id="submitInfo" class="btn btn-default search-form-btn" id="run-search">
-                                    <p>SEARCH <i class="glyphicon glyphicon-search"></i></p></button>
-                                </li>
-                            </form>
-                        </ul>
+            <!-- Navbar with search form -->
+            <div class="container-fluid">
+                <div id="nav">
+                    <div class="navbar navbar-static">
+                        <div class="container">
+                            <div class="navbar">
+                                <!-- <div class="navbar-collapse collapse"> -->
+                                <ul class="nav navbar-nav">
+                                    <!-- <ul class="nav pull-right navbar-nav"> -->
+                                    <form class="navbar-form form-inline">
+                                        <li>
+                                            <h1 id="find" class="py-5" title="find an event in your chosen city">Find Events</h1>
+                                            <!-- input boxes -->
+                                            <!-- Event categories -->
+                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                <div class="input-group-addon">Event categories</div>
+                                                <select class="form-control" id="categoriesDropDown">
+                                                    <option value="Comedy">Comedy</option>
+                                                    <option value="Concerts">Concerts</option>
+                                                    <option value="Conferences">Conferences</option>
+                                                    <option value="Festivals">Festivals</option>
+                                                    <option value="Food" selected>Food</option>
+                                                    <option value="Family">Family</option>
+                                                    <option value="Nightlife">Nightlife</option>
+                                                    <option value="Performing Arts">Performing Arts</option>
+                                                    <option value="Sports">Sports</option>
+                                                </select>
+                                            </div>
+                                            <!-- Event location -->
+                                            <input type="text" id="eventLocation" class="form-control search-form-text" placeholder="Event Location">
+                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                <div class="input-group-addon">DATE</div>
+                                                <select class="form-control" id="dateDropDown">
+                                                    <option value="Future" selected>Future</option>
+                                                    <option value="Today">Today</option>
+                                                    <option value="This Week">This Week</option>
+                                                    <option value="Next Week">Next Week</option>
+                                                </select>
+                                            </div>
+                                            <!-- submit button -->
+                                            <button type="submit" id="submitInfo" class="btn btn-default search-form-btn" id="run-search">
+                                                <p>SEARCH <i class="glyphicon glyphicon-search"></i></p>
+                                            </button>
+                                        </li>
+                                    </form>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
         </section>
         <br />
         <br />
         <!-- Below photo -->
         <div id="belowPhoto" class="well">
-        <h1 class="font">FEATURED EVENTS</h1>
-        <h3 class="font">Near 
+            <h1 class="font">FEATURED EVENTS</h1>
+            <h3 class="font">Near 
             <span id="searchLocation">...</span>
         </h3>
-        
-        <!-- Results area -->
-        <div class="row" id="searchResultsRow">
-         <!-- Pagination -->
-                    <div class="container">
-            <ul class="pagination pagination-lg">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
+            <!-- Results area -->
+            <div class="row" id="searchResultsRow">
+                <!-- Pagination -->
+                <div class="container">
+                    <ul class="pagination pagination-lg">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                     <span class="sr-only">Previous</span>
                     </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#" aria-label="Next">
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                     <span class="sr-only">Next</span></a>
-                </li>
-            </ul>
-        </div>
-        </div>
-        
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <br>
         <br>
-       
-       
     </div>
     <br />
     <br />
@@ -133,11 +129,13 @@
                         <form action="#">
                             <div class="input-form">
                                 <h4 class="subscribe-text">SUBSCRIBE FOR FUTURE EVENTS</h4>
-                                <br><br>
+                                <br>
+                                <br>
                                 <div class="input-field">
-                                <input class="btn btn-lg" name="email" id="email" type="email" placeholder="Enter Email Here" required>
+                                    <input class="btn btn-lg" name="email" id="email" type="email" placeholder="Enter Email Here" required>
                                 </div>
-                                <br><br>
+                                <br>
+                                <br>
                                 <a href="#" class="btn btn-info btn-lg">
                                     <span class="glyphicon glyphicon-envelope"></span> SUBMIT
                                 </a>

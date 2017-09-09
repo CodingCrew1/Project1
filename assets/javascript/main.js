@@ -1,25 +1,28 @@
 // Initialize Firebase 
-/*var config = { apiKey: "AIzaSyDx7w0AdjWIHAawYuRdcOfOCSi3KM6evXo", 
-authDomain: "cwrucbproject.firebaseapp.com", 
-databaseURL: "https://cwrucbproject.firebaseio.com", 
-projectId: "cwrucbproject", 
-storageBucket: "", 
-messagingSenderId: "1056549983679" }; 
-firebase.initializeApp(config);   
+var config = {
+    apiKey: "AIzaSyDx7w0AdjWIHAawYuRdcOfOCSi3KM6evXo",
+    authDomain: "cwrucbproject.firebaseapp.com",
+    databaseURL: "https://cwrucbproject.firebaseio.com",
+    projectId: "cwrucbproject",
+    storageBucket: "",
+    messagingSenderId: "1056549983679"
+};
+firebase.initializeApp(config);
 var database = firebase.database()
 // return false; 
-  
+
 //  Created a firebase event listner for adding user data to database 
-  database.ref().on("child_added", function(childSnapshot) {
-  console.log(childSnapshot.val());
- var email = childSnapshot.val().email;
- $("#emailSubmit").on("click", function(event) {
-    event.preventDefault();
- var emailSubmit = $("#emailSubmit").val().trim();  
- // uploads user inputed data to the database
-  database.ref().push(email.submitInfo); 
-  console.log(email.submitInfo); 
-  // });*/
+database.ref().on("child_added", function(childSnapshot) {
+    console.log(childSnapshot.val());
+    var email = childSnapshot.val().email;
+    $("#emailSubmit").on("click", function(event) {
+        event.preventDefault();
+        var emailSubmit = $("#emailSubmit").val().trim();
+        // uploads user inputed data to the database
+        database.ref().push(email.submitInfo);
+        console.log(email.submitInfo);
+    });
+});
 
 var randomCities = ["Cleveland", "Pittsburgh", "Chicago", "Detroit", "San Antonio", "Los Angeles"];
 var randomKeywords = ["comedy", "concerts", "conferences", "festivals", "food", "family", "nightlife", "sports"];
@@ -79,7 +82,7 @@ function updateSearchResults(events) {
             var imgUrl = events[i].image.medium.url;
             var image = $("<img>").attr("src", imgUrl);
             eventDiv.append(image);
-        }else{
+        } else {
             events[i].image == null;
             eventDiv.append('<img id="theImage" src="assets/image/nophotoavailable.png"/>');
         }
@@ -104,22 +107,20 @@ function updateSearchResults(events) {
             var pTwo = $("<p>").text(address);
             eventDiv.append(pTwo);
         }
-        if (events[i].city_name != null) {
+        if (events[i].city_name != null && events[i].region_name != null) {
             var city = events[i].city_name;
-            var pThree = $("<p>").text(city);
+            var region = events[i].region_name;
+            var pThree = $("<p>").text(city + ", " + region);
             eventDiv.append(pThree);
         }
-        if (events[i].region_name != null) {
-            var region = events[i].region_name;
-            var pFour = $("<p>").text(region);
-            var button = $("<button>").addClass("choose-button").text("Choose this Event!");
-            eventDiv.append(pFour);
-            eventDiv.append(button);
-        }
+
+        //  var button = $("<input type='button'>").addClass("choose-button").text("more details");
+        //  eventDiv.append(button);
 
         $("#searchResultsRow").append(eventDiv);
 
     }
+
 }
 
 
