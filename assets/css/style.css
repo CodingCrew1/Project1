@@ -96,21 +96,22 @@ a:hover {
 	font-family:lucida;
 }
 .well {
-	background-image: url('http://cache.wizardworld.com/files/hero/_1200x630_fit_center-center_100/WW-cleveland.jpg');
+	background-image: url('https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3956366.jpg');
 	border-radius: 25px;
 }
 .input-form {
 	width: 100%;
 	padding: 10px;
-	background: wheat;
+	background-image: url('https://image.freepik.com/free-vector/abstract-background-with-a-3d-pattern_1319-68.jpg');
 	color: #104E8B;
 	border-radius: 25px;
 	font-family:lucida;
 }
 .subscribe-text{
 	font-weight:bold;
+  font-size:32px;
 	font-family:Lucida;
-	color:#c61f41;
+	color:#545d63;
 	text-align:center;
 }
 .input-field{
@@ -118,6 +119,7 @@ a:hover {
 	left:30%;
 	top:35%;
 	margin-right:30px;
+  margin-top:10px;
 }
 .comment-form{
 	position:absolute;
