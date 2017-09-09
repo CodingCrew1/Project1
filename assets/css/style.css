@@ -21,7 +21,6 @@ body {
 	color: black;
   box-shadow: 9px 9px 0 0  #777777;
   border-radius: 25px;
-  overflow: hidden;
 }
 a:hover {
 	font-size:120%;
@@ -59,7 +58,6 @@ a:hover {
   font-family:lucida;
   box-shadow: 9px 9px 0 0 #777777;
 }
-.home-return:before,
 #belowPhoto:before {
   content: ' ';
   display: block;
@@ -89,7 +87,6 @@ a:hover {
   -webkit-background-size: cover;
   background-size: cover;
 }
-.home-return,
 #belowPhoto,
 #belowPhoto h1, 
 #belowPhoto h2,
