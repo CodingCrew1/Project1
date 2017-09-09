@@ -1,14 +1,21 @@
 body {
-	/*background: white;*/
+  /*background: white;*/
   /*background-image: url('https://t3.ftcdn.net/jpg/01/38/06/92/500_F_138069241_UK1jK2iIpsKiRrseeCdAoF6ODNxgN3Ui.jpg');
   */
   /*background: #FFFAF7;*/
-  background-image: url('https://s3-eu-west-1.amazonaws.com/surfaceview/images/2327/original/TEX0050_websource.jpg');
-  
-  /*background-image: url('https://ak5.picdn.net/shutterstock/videos/14795113/thumb/1.jpg?i10c=img.resize(height:160)');
+  /*background-image: url('https://s3-eu-west-1.amazonaws.com/surfaceview/images/2327/original/TEX0050_websource.jpg');
   */
+  background-image: url('https://ak5.picdn.net/shutterstock/videos/14795113/thumb/1.jpg?i10c=img.resize(height:160)');
+  
   /*background-image: url('https://images.megapixl.com/192/1926307.jpg');
   */
+  /*background-image: url('https://images.freecreatives.com/wp-content/uploads/2015/05/wildtextures_white-brick-wall.jpg');
+  */
+}
+#title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 64px;
 }
 .home-return{
 	color: black;
@@ -48,8 +55,8 @@ a:hover {
   background: #F1D6E8;
   background: #cccccc;
   overflow: hidden;
-	border-radius: 25px;
-	font-family:lucida;
+  border-radius: 25px;
+  font-family:lucida;
   box-shadow: 9px 9px 0 0 #777777;
 }
 .home-return:before,
@@ -64,11 +71,16 @@ a:hover {
   z-index: 2;
   opacity: 0.4;
   border-radius: 25px;
-  background-image: url('https://s3-eu-west-1.amazonaws.com/surfaceview/images/2327/original/TEX0050_websource.jpg');
-  
-  /*background-image: url('https://ak5.picdn.net/shutterstock/videos/14795113/thumb/1.jpg?i10c=img.resize(height:160)');
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 500px;
+  /*background-image: url('https://s3-eu-west-1.amazonaws.com/surfaceview/images/2327/original/TEX0050_websource.jpg');
   */
+  background-image: url('https://ak5.picdn.net/shutterstock/videos/14795113/thumb/1.jpg?i10c=img.resize(height:160)');
+  
   /*background-image: url('https://images.megapixl.com/192/1926307.jpg');
+  */
+  /*background-image: url('https://images.freecreatives.com/wp-content/uploads/2015/05/wildtextures_white-brick-wall.jpg');
   */
   background-position: 50% 0;
   -ms-background-size: cover;
@@ -85,9 +97,10 @@ a:hover {
 #searchResultsRow,
 #searchLocation,
 #eventDescriptionRow {
-	color: black;
-	z-index: 3;
+  color: black;
+  z-index: 3;
   position: relative;
+  height: 500px;
 }
 .footer-container {
 	background: black;
