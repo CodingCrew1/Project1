@@ -14,6 +14,7 @@ body {
 	color: black;
   box-shadow: 9px 9px 0 0  #777777;
   border-radius: 25px;
+  overflow: hidden;
 }
 a:hover {
 	font-size:120%;
@@ -51,8 +52,8 @@ a:hover {
 	font-family:lucida;
   box-shadow: 9px 9px 0 0 #777777;
 }
-.home-return: before,
-#belowPhoto: before {
+.home-return:before,
+#belowPhoto:before {
   content: ' ';
   display: block;
   position: absolute;
@@ -62,6 +63,7 @@ a:hover {
   height: 100%;
   z-index: 2;
   opacity: 0.4;
+  border-radius: 25px;
   background-image: url('https://s3-eu-west-1.amazonaws.com/surfaceview/images/2327/original/TEX0050_websource.jpg');
   
   /*background-image: url('https://ak5.picdn.net/shutterstock/videos/14795113/thumb/1.jpg?i10c=img.resize(height:160)');
