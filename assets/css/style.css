@@ -36,7 +36,7 @@ a:hover {
 }
 #photo,
 #details-photo {
-  height: 200px;
+  height: 250px;
   border-radius: 25px;
   box-shadow: 9px 9px 0 0  #777777;
 }
@@ -189,7 +189,7 @@ img {
 }
 .nav{
   position:absolute;
-  top:90px;
+  top:0px;
   right:250px;
 }
 #submitInfo{
