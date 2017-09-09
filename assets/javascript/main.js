@@ -76,7 +76,7 @@ function eventSearch(location, keywords, date) {
         keywords: keywords,
         date: date,
         app_key: "3wKwrHtr35ZbcRWR"
-    }
+    };
     EVDB.API.call("/events/search", searchQueryParams, function(data) {
         updateSearchResults(data.events.event);
     });
@@ -90,19 +90,19 @@ function updateSearchResults(events) {
         loopCount = events.length;
     }
     for (i = 0; i < loopCount; i++) {
-        var eventDiv = $("<div class='event col-lg-3 col-md-4 col-sm-6 portfolio-item'>" + "<br />");
+        var eventDiv = $("<div id='belowPhoto' class='event col-lg-3 col-md-4 col-sm-6 portfolio-item'>" + "<br />");
         console.log(events[i]);
         if (events[i].image != null) {
             var imgUrl = events[i].image.medium.url;
-            var image = $("<img>").attr("src", imgUrl);
+            var image = $("<img class='center-block'>").attr("src", imgUrl);
             eventDiv.append(image);
         } else {
             events[i].image == null;
-            eventDiv.append('<img id="theImage" src="assets/image/nophotoavailable.png"/>');
+            eventDiv.append('<img id="theImage" class="center-block" src="assets/image/nophotoavailable.png"/>');
         }
         if (events[i].title != null) {
             var title = events[i].title;
-            var pHeader = $("<H2>").text(title);
+            var pHeader = $("<H2 id='title'>").text(title);
             eventDiv.append(pHeader);
         }
         if (events[i].start_time != null) {
