@@ -1,5 +1,5 @@
 // Initialize Firebase 
-var config = { apiKey: "AIzaSyDx7w0AdjWIHAawYuRdcOfOCSi3KM6evXo", 
+/*var config = { apiKey: "AIzaSyDx7w0AdjWIHAawYuRdcOfOCSi3KM6evXo", 
 authDomain: "cwrucbproject.firebaseapp.com", 
 databaseURL: "https://cwrucbproject.firebaseio.com", 
 projectId: "cwrucbproject", 
@@ -19,7 +19,7 @@ var database = firebase.database()
  // uploads user inputed data to the database
   database.ref().push(email.submitInfo); 
   console.log(email.submitInfo); 
-  // });
+  // });*/
 
 var randomCities = ["Cleveland", "Pittsburgh", "Chicago", "Detroit", "San Antonio", "Los Angeles"];
 var randomKeywords = ["comedy", "concerts", "conferences", "festivals", "food", "family", "nightlife", "sports"];
