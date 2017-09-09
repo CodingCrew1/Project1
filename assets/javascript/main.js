@@ -21,6 +21,7 @@ var database = firebase.database()
   console.log(email.submitInfo); 
   // });
 
+
 var randomCities = ["Cleveland", "Pittsburgh", "Chicago", "Detroit", "San Antonio", "Los Angeles"];
 var randomKeywords = ["music", "sports", "comedy"];
 
@@ -40,7 +41,7 @@ $("#submitInfo").on("click", function(event) {
     event.preventDefault();
 
     var eventLocation = $("#eventLocation").val().trim();
-    var eventKeywords = $("#eventKeywords").val().trim();
+    var eventKeywords = $("#categoriesDropDown :selected").text();
     var eventDate = $("#dateDropDown :selected").text();
 
     console.log(eventDate);
@@ -79,6 +80,9 @@ function updateSearchResults(events) {
             var imgUrl = events[i].image.medium.url;
             var image = $("<img>").attr("src", imgUrl);
             eventDiv.append(image);
+        }else{
+            events[i].image == null;
+            eventDiv.append('<img id="theImage" src="assets/image/nophotoavailable.png"/>');
         }
         if (events[i].title != null) {
             var title = events[i].title;
