@@ -21,14 +21,37 @@ function updateEventDetails(details) {
     var formattedTime = moment(startTime).format('MMMM Do YYYY, h:mm a');
     $("#startTime").after(formattedTime);
 
+    var region = details.region;
+    var pFive = $("<H4>").text(region);
+    $("#eventDetails").after(pFive);
 
-    var price = details.price
-    var pOne = $("<p>").text(price);
+    var city = details.city;
+    var pFour = $("<H4>").text(city);
+    $("#eventDetails").after(pFour);
+
+    var address = details.address;
+    var pThree = $("<H4>").text(address);
+    $("#eventDetails").after(pThree);
+
+    var price = details.price;
+    var pOne = $("<h4>").text(price);
     $("#eventDetails").after(pOne);
 
-    var venue = details.venue_name
-    var pTwo = $("<H4>").text(venue);
+    var venue = details.venue_name;
+    var pTwo = $("<H3>").text(venue);
     $("#eventDetails").after(pTwo);
 
+    var imgUrl = details.images.medium.url;
+    var image = $("<img>").attr("src", imgUrl);
+    $("#img-event").after(image);
+    
 
-}
+
+
+
+
+
+
+
+
+};

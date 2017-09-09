@@ -1,5 +1,28 @@
+// Initialize Firebase 
+var config = { apiKey: "AIzaSyDx7w0AdjWIHAawYuRdcOfOCSi3KM6evXo", 
+authDomain: "cwrucbproject.firebaseapp.com", 
+databaseURL: "https://cwrucbproject.firebaseio.com", 
+projectId: "cwrucbproject", 
+storageBucket: "", 
+messagingSenderId: "1056549983679" }; 
+firebase.initializeApp(config);   
+var database = firebase.database()
+// return false; 
+  
+//  Created a firebase event listner for adding user data to database 
+  database.ref().on("child_added", function(childSnapshot) {
+  console.log(childSnapshot.val());
+ var email = childSnapshot.val().email;
+ $("#emailSubmit").on("click", function(event) {
+    event.preventDefault();
+ var emailSubmit = $("#emailSubmit").val().trim();  
+ // uploads user inputed data to the database
+  database.ref().push(email.submitInfo); 
+  console.log(email.submitInfo); 
+  // });
+
 var randomCities = ["Cleveland", "Pittsburgh", "Chicago", "Detroit", "San Antonio", "Los Angeles"];
-var randomKeywords = ["music", "sports", "comedy"];
+var randomKeywords = ["comedy", "concerts", "conferences", "festivals", "food", "family", "nightlife", "sports"];
 
 var generateRandomCity = function() {
     return randomCities[Math.floor(Math.random() * randomCities.length)];
