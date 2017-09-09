@@ -12,6 +12,8 @@ body {
 }
 .home-return{
 	color: black;
+  box-shadow: 9px 9px 0 0  #777777;
+  border-radius: 25px;
 }
 a:hover {
 	font-size:120%;
@@ -27,13 +29,15 @@ a:hover {
 }
 #photo {
     background-image: url('http://cache.wizardworld.com/files/hero/_1200x630_fit_center-center_100/WW-cleveland.jpg');
-    height: 300px;
-    border-radius: 25px;
 }
 #details-photo {
   background-image: url('https://mavenprodcontent.blob.core.windows.net/media/houseofblues_dal/ImageGalleryWidget/Special_Events_Slider/specialevents_slide02_fans.jpg');
+}
+#photo,
+#details-photo {
   height: 300px;
   border-radius: 25px;
+  box-shadow: 9px 9px 0 0  #777777;
 }
 #belowPhoto {
   /*background: #5C97FF;*/
@@ -45,8 +49,10 @@ a:hover {
   overflow: hidden;
 	border-radius: 25px;
 	font-family:lucida;
+  box-shadow: 9px 9px 0 0 #777777;
 }
-#belowPhoto:before {
+.home-return: before,
+#belowPhoto: before {
   content: ' ';
   display: block;
   position: absolute;
@@ -69,6 +75,7 @@ a:hover {
   -webkit-background-size: cover;
   background-size: cover;
 }
+.home-return,
 #belowPhoto,
 #belowPhoto h1, 
 #belowPhoto h2,
