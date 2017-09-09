@@ -19,7 +19,7 @@ var database = firebase.database()
  // uploads user inputed data to the database
   database.ref().push(email.submitInfo); 
   console.log(email.submitInfo); 
-  // );}
+  // });
 
 var randomCities = ["Cleveland", "Pittsburgh", "Chicago", "Detroit", "San Antonio", "Los Angeles"];
 var randomKeywords = ["music", "sports", "comedy"];
