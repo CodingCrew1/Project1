@@ -36,7 +36,7 @@ a:hover {
 }
 #photo,
 #details-photo {
-  height: 300px;
+  height: 200px;
   border-radius: 25px;
   box-shadow: 9px 9px 0 0  #777777;
 }
@@ -186,4 +186,16 @@ img {
 .item img.resize{
   height:300px;
   width:1200;
+}
+.nav{
+  position:absolute;
+  top:90px;
+  right:250px;
+}
+#submitInfo{
+  height:33px;
+  padding:5px;
+}
+#find{
+  color:white;
 }
