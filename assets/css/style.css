@@ -178,3 +178,10 @@ img {
 .choose-button:hover {
 	background-color: #ed0e0e 
 }
+.carousel-inner{
+  height:300px;
+}
+.item img.resize{
+  height:300px;
+  width:1200;
+}
