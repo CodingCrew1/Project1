@@ -98,51 +98,53 @@ function updateSearchResults(events) {
         loopCount = events.length;
     }
     for (i = 0; i < loopCount; i++) {
-        var eventDiv = $("<div id='belowPhoto' class='well event col-lg-3 col-md-4 col-sm-6 portfolio-item'>" + "<br />");
+        var eventDiv = $("<div class='event col-lg-3 col-md-4 col-sm-6 portfolio-item'>");
+        var eventDivNarrow = $("<div id='belowPhoto' class='well col-lg-11 col-md-11 col-sm-11 portolio-item'>");
  
         console.log(events[i]);
         if (events[i].image != null) {
             var imgUrl = events[i].image.medium.url;
             var image = $("<img class='center-block'>").attr("src", imgUrl);
-            eventDiv.append(image);
+            eventDivNarrow.append(image);
         } else {
             events[i].image == null;
-            eventDiv.append('<img id="theImage" class="center-block" src="assets/image/nophotoavailable.png"/>');
+            eventDivNarrow.append('<img id="theImage" class="center-block" src="assets/image/nophotoavailable.png"/>');
         }
         if (events[i].title != null) {
             var title = events[i].title;
             var pHeader = $("<H2 id='title'>").text(title);
-            eventDiv.append(pHeader);
+            eventDivNarrow.append(pHeader);
         }
         if (events[i].start_time != null) {
             var startTime = events[i].start_time;
             var formattedTime = moment(startTime).format('MMMM Do YYYY, h:mm a');
             var pFive = $("<H4>").text(formattedTime);
-            eventDiv.append(pFive);
+            eventDivNarrow.append(pFive);
         }
         if (events[i].venue_name != null) {
             var venue = events[i].venue_name;
             var pOne = $("<p>").text(venue);
-            eventDiv.append(pOne);
+            eventDivNarrow.append(pOne);
         }
         if (events[i].venue_address != null) {
             var address = events[i].venue_address;
             var pTwo = $("<p>").text(address);
-            eventDiv.append(pTwo);
+            eventDivNarrow.append(pTwo);
         }
         if (events[i].city_name != null && events[i].region_name != null) {
             var city = events[i].city_name;
             var region = events[i].region_name;
             var pThree = $("<p>").text(city + ", " + region);
-            eventDiv.append(pThree);
+            eventDivNarrow.append(pThree);
         }
 
         var button = $("<button class='btn btn-default' type='button'></button>").text("More Details");
         $(button).on("click", function() {
             window.location = "details.html?id=" + events[i].id;
         });
-        eventDiv.append(button);
+        eventDivNarrow.append(button);
 
+        eventDiv.append(eventDivNarrow);
         $("#searchResultsRow").append(eventDiv);
 
     }
