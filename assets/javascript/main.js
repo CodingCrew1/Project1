@@ -97,56 +97,55 @@ function updateSearchResults(events) {
     if (events.length < loopCount) {
         loopCount = events.length;
     }
-    for (i = 0; i < loopCount; i++) {
-        var eventDiv = $("<div class='event col-lg-3 col-md-4 col-sm-6 portfolio-item'>");
-        var eventDivNarrow = $("<div id='belowPhoto' class='well col-lg-11 col-md-11 col-sm-11 portolio-item'>");
- 
-        console.log(events[i]);
-        if (events[i].image != null) {
-            var imgUrl = events[i].image.medium.url;
-            var image = $("<img class='center-block'>").attr("src", imgUrl);
-            eventDivNarrow.append(image);
-        } else {
-            events[i].image == null;
-            eventDivNarrow.append('<img id="theImage" class="center-block" src="assets/image/nophotoavailable.png"/>');
-        }
-        if (events[i].title != null) {
-            var title = events[i].title;
-            var pHeader = $("<H2 id='title'>").text(title);
-            eventDivNarrow.append(pHeader);
-        }
-        if (events[i].start_time != null) {
-            var startTime = events[i].start_time;
-            var formattedTime = moment(startTime).format('MMMM Do YYYY, h:mm a');
-            var pFive = $("<H4>").text(formattedTime);
-            eventDivNarrow.append(pFive);
-        }
-        if (events[i].venue_name != null) {
-            var venue = events[i].venue_name;
-            var pOne = $("<p>").text(venue);
-            eventDivNarrow.append(pOne);
-        }
-        if (events[i].venue_address != null) {
-            var address = events[i].venue_address;
-            var pTwo = $("<p>").text(address);
-            eventDivNarrow.append(pTwo);
-        }
-        if (events[i].city_name != null && events[i].region_name != null) {
-            var city = events[i].city_name;
-            var region = events[i].region_name;
-            var pThree = $("<p>").text(city + ", " + region);
-            eventDivNarrow.append(pThree);
-        }
+    for (index = 0; index < loopCount; index++) {
+        (function(i) {
+            var eventDiv = $("<div class='event col-lg-3 col-md-4 col-sm-6 portfolio-item'>");
+            var eventDivNarrow = $("<div id='belowPhoto' class='well col-lg-11 col-md-11 col-sm-11 portolio-item'>");
 
-        var button = $("<button class='btn btn-default' type='button'></button>").text("More Details");
-        $(button).on("click", function() {
-            window.location = "details.html?id=" + events[i].id;
-        });
-        eventDivNarrow.append(button);
+            console.log(events[i].title, events[i].id);
+            if (events[i].image != null) {
+                var imgUrl = events[i].image.medium.url;
+                var image = $("<img class='center-block'>").attr("src", imgUrl);
+                eventDivNarrow.append(image);
+            } else {
+                eventDivNarrow.append('<img id="theImage" class="center-block" src="assets/image/nophotoavailable.png"/>');
+            }
+            if (events[i].title != null) {
+                var title = events[i].title;
+                var pHeader = $("<H2 id='title'>").text(title);
+                eventDivNarrow.append(pHeader);
+            }
+            if (events[i].start_time != null) {
+                var startTime = events[i].start_time;
+                var formattedTime = moment(startTime).format('MMMM Do YYYY, h:mm a');
+                var pFive = $("<H4>").text(formattedTime);
+                eventDivNarrow.append(pFive);
+            }
+            if (events[i].venue_name != null) {
+                var venue = events[i].venue_name;
+                var pOne = $("<p>").text(venue);
+                eventDivNarrow.append(pOne);
+            }
+            if (events[i].venue_address != null) {
+                var address = events[i].venue_address;
+                var pTwo = $("<p>").text(address);
+                eventDivNarrow.append(pTwo);
+            }
+            if (events[i].city_name != null && events[i].region_name != null) {
+                var city = events[i].city_name;
+                var region = events[i].region_name;
+                var pThree = $("<p>").text(city + ", " + region);
+                eventDivNarrow.append(pThree);
+            }
+            var button = $("<button class='btn btn-default' type='button'></button>").text("More Details");
+            $(button).on("click", function() {
+                window.location = "details.html?id=" + events[i].id;
+            });
+            eventDivNarrow.append(button);
 
-        eventDiv.append(eventDivNarrow);
-        $("#searchResultsRow").append(eventDiv);
-
+            eventDiv.append(eventDivNarrow);
+            $("#searchResultsRow").append(eventDiv);
+        })(index);
     }
 
 }

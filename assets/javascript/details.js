@@ -48,19 +48,14 @@ function updateEventDetails(details) {
         var pTwo = $("<H3>").text(venue);
         $("#eventDetails").after(pTwo);
     }
-    if (details.images.image != null) {
+    if (details.images != null) {
         console.log(details.images.image);
         var imgUrl = details.images.image.medium.url;
         $("#imageEvent").attr("src", imgUrl);
     } else {
-        details.images.image == null;
-        eventDiv.append('<img id="imageEvent" src="assets/image/nophotoavailable.png"/>');
+       $("#imageEvent").attr("src", "assets/image/nophotoavailable.png");
 
     }
-
-
-
-
 };
 
 //found this function on stackoverflow to get values from query string   
