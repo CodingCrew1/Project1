@@ -98,7 +98,9 @@ function updateSearchResults(events) {
         loopCount = events.length;
     }
     for (i = 0; i < loopCount; i++) {
+        var eventDivWell = $("<div class='well'>");
         var eventDiv = $("<div id='belowPhoto' class='event col-lg-3 col-md-4 col-sm-6 portfolio-item'>" + "<br />");
+        
         console.log(events[i]);
         if (events[i].image != null) {
             var imgUrl = events[i].image.medium.url;
@@ -142,7 +144,8 @@ function updateSearchResults(events) {
         });
         eventDiv.append(button);
 
-        $("#searchResultsRow").append(eventDiv);
+        eventDivWell.append(eventDiv);
+        $("#searchResultsRow").append(eventDivWell);
 
     }
 
