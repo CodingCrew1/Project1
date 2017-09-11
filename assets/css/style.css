@@ -43,7 +43,7 @@ a:hover {
 #photo,
 #details-photo {
   height: 250px;
-  border-radius: 25px;
+  /*border-radius: 25px;*/
   box-shadow: 9px 9px 0 0  #777777;
 }
 #belowPhoto {
@@ -54,7 +54,7 @@ a:hover {
   background: #F1D6E8;
   background: #cccccc;
   overflow: hidden;
-  border-radius: 25px;
+  /*border-radius: 25px;*/
   font-family:lucida;
   box-shadow: 9px 9px 0 0 #777777;
 }
@@ -68,7 +68,7 @@ a:hover {
   height: 100%;
   z-index: 2;
   opacity: 0.4;
-  border-radius: 25px;
+  /*border-radius: 25px;*/
   overflow: hidden;
   text-overflow: ellipsis;
   height: 500px;

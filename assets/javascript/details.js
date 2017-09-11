@@ -7,16 +7,16 @@ function loadEventDetails(eventId) {
         app_key: "3wKwrHtr35ZbcRWR"
     }
     EVDB.API.call("/events/get", eventQueryParams, function(data) {
-        console.log(data);
+       
         updateEventDetails(data);
     });
 
 }
 
 function updateEventDetails(details) {
+     console.log(details);
     $("#titleRow").text(details.title);
     $("#eventDescription").after(details.description);
-
 
     var startTime = details.start_time;
     var formattedTime = moment(startTime).format('MMMM Do YYYY, h:mm a');

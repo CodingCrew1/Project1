@@ -51,7 +51,7 @@ var generateRandomKeyword = function() {
 };
 var randomKeyword = generateRandomKeyword();
 
-eventSearch(randomCity, randomKeyword);
+eventSearch(randomCity, randomKeyword, "Next Week");
 
 $("#submitInfo").on("click", function(event) {
     event.preventDefault();
@@ -78,7 +78,15 @@ function eventSearch(location, keywords, date) {
         app_key: "3wKwrHtr35ZbcRWR"
     };
     EVDB.API.call("/events/search", searchQueryParams, function(data) {
-        updateSearchResults(data.events.event);
+       console.log(data.events);
+        if (data.events === null) {
+            var displayText = "No Results Found";
+            var noResults = $("<h3>").text(displayText);
+            $("#searchResultsRow").html(noResults);
+        } else {
+            updateSearchResults(data.events.event);
+        }
+
     });
 }
 
