@@ -70,9 +70,7 @@ a:hover {
   /*background-image: url('https://s3-eu-west-1.amazonaws.com/surfaceview/images/2327/original/TEX0050_websource.jpg');
   */
   background-image: url('https://ak5.picdn.net/shutterstock/videos/14795113/thumb/1.jpg?i10c=img.resize(height:160)');
-  
-  /*background-image: url('https://images.megapixl.com/192/1926307.jpg');
-  */
+
   /*background-image: url('https://images.freecreatives.com/wp-content/uploads/2015/05/wildtextures_white-brick-wall.jpg');
   */
   background-position: 50% 0;
@@ -83,10 +81,18 @@ a:hover {
   background-size: cover;
 }
 #belowPhoto,
-#belowPhoto h1, 
+#belowPhoto img,
 #belowPhoto h2,
-#belowPhoto h3,
-#searchResultsRow,
+#belowPhoto h4,
+#belowPhoto p,
+#belowPhoto button {
+  z-index: 3;
+  position: relative;
+}
+#belowPhoto {
+  color: black;
+  height: 500px;
+}
 #searchLocation,
 #eventDescriptionRow {
   color: black;
