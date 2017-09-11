@@ -106,15 +106,15 @@ a:hover {
 	border: 2px solid black;
 	font-family:lucida;
 }
-#email-well {
-	background-image: url('https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3956366.jpg');
+.email-form {
 	border-radius: 25px;
+  margin-bottom:20px;
 }
 .input-form {
 	width: 100%;
 	padding: 10px;
-	background-image: url('https://image.freepik.com/free-vector/abstract-background-with-a-3d-pattern_1319-68.jpg');
-	color: #104E8B;
+	background-image: url('http://i.dailymail.co.uk/i/pix/2016/04/15/13/2591F30000000578-3541631-image-a-4_1460721669000.jpg');
+	color: white;
 	border-radius: 25px;
 	font-family:lucida;
 }
@@ -122,7 +122,7 @@ a:hover {
 	font-weight:bold;
   font-size:32px;
 	font-family:Lucida;
-	color:#545d63;
+	color:white;
 	text-align:center;
 }
 .input-field{
