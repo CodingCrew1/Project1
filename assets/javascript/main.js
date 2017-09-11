@@ -78,7 +78,7 @@ function eventSearch(location, keywords, date) {
         app_key: "3wKwrHtr35ZbcRWR"
     };
     EVDB.API.call("/events/search", searchQueryParams, function(data) {
-       console.log(data.events);
+        console.log(data.events);
         if (data.events === null) {
             var displayText = "No Results Found";
             var noResults = $("<h3>").text(displayText);
@@ -136,29 +136,14 @@ function updateSearchResults(events) {
             eventDiv.append(pThree);
         }
 
-        //  var button = $("<input type='button'>").addClass("choose-button").text("more details");
-        //  eventDiv.append(button);
+        var button = $("<button class='btn btn-default' type='button'></button>").text("More Details");
+        $(button).on("click", function() {
+            window.location = "details.html?id=" + events[i].id;
+        });
+        eventDiv.append(button);
 
         $("#searchResultsRow").append(eventDiv);
 
     }
 
 }
-
-
-
-
-
-
-
-
-//for featured events
-/*var eventQueryParams = {
-     id: "E0-001-106248383-8",
-     app_key: "3wKwrHtr35ZbcRWR"
- }
-
-
-EVDB.API.call("/events/get", eventQueryParams, function(data) {
-     console.log(data); 
- });*/
