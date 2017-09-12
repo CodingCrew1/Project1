@@ -39,7 +39,7 @@ var database = firebase.database();
   });*/
 
 var randomCities = ["Cleveland", "Pittsburgh", "Chicago", "Detroit", "San Antonio", "Los Angeles"];
-var randomKeywords = ["comedy", "concerts", "conferences", "festivals", "food", "family", "nightlife", "sports"];
+var randomKeywords = ["comedy", "concerts", "food","sports"];
 
 var generateRandomCity = function() {
     return randomCities[Math.floor(Math.random() * randomCities.length)];
@@ -93,7 +93,7 @@ function eventSearch(location, keywords, date) {
 function updateSearchResults(events) {
     $("#searchResultsRow").empty();
     console.log(events);
-    var loopCount = 4;
+    var loopCount = 8;
     if (events.length < loopCount) {
         loopCount = events.length;
     }
