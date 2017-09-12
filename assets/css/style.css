@@ -214,3 +214,43 @@ img {
   color:white;
   z-index:1;
 }
+
+.food-options{
+  width: 450px;
+  height: 100px;
+  padding: 1%;
+  background-color:white;
+}
+
+#map{
+  height: calc(100% - 60px);
+}
+
+.buttons h4{
+  text-align: left;
+  display: flex;
+  font-family: Georgia;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.col-6map{
+  width: 100%;
+  display:flex;
+}
+
+
+.buttons button{
+  background-color: #F9F9F9;
+  border:none;
+  height: 60px;
+  color:black;
+  font-weight: 100;
+  width: 100px;
+  margin-right: 5px;
+}
+.buttons button:hover{
+  background-color: #F0f0f0;
+  cursor:pointer;
+}
+

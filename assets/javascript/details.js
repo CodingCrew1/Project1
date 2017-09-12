@@ -56,6 +56,9 @@ function updateEventDetails(details) {
        $("#imageEvent").attr("src", "assets/image/nophotoavailable.png");
 
     }
+
+    var latitude = Number(details.latitude);
+    var longitude = Number(details.longitude);
 };
 
 //found this function on stackoverflow to get values from query string   
@@ -67,4 +70,105 @@ function getParameterByName(name, url) {
     if (!results) return null;
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+//// begin map portion of page////
+
+var map;
+var markers = [];
+var infowindow;
+
+// map options
+function initMap(){
+            //var loc = {lat: position.coords.latitude,lng: position.coords.longitude};
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 39.828127, lng: -98.579404},
+                //center:{lat: 41.4993, lng: -81.6944},
+                zoom: 3
+            });
+
+// new map
+function makeMarker(latitude, longitude) {
+    var position = {lat: latitude,lng: longitude};
+    var marker1 = new google.maps.Marker({position: position, map:map});
+ 
+ markers.push(marker1);
+}
+
+            infowindow = new google.maps.InfoWindow();
+     
+}
+
+
+// identify type of food to load upon user selection
+$(document).ready(function(){
+    $("#fast").click(function(){
+        deleteMarkers();
+        addMarkers("fast food");
+    });
+
+    $("#happy").click(function(){
+        deleteMarkers();
+        addMarkers("happy hour");
+    });
+
+    $("#asian").click(function(){
+        deleteMarkers();
+        addMarkers("asian food");
+    });
+
+    $("#italian").click(function(){
+        deleteMarkers();
+        addMarkers("italian food");
+    });
+
+    $("#mex").click(function(){
+        deleteMarkers();
+        addMarkers("mexican food");
+    });
+
+    $("#drunk").click(function(){
+        deleteMarkers();
+        addMarkers("late night diners");
+    });
+});
+
+//function callback to Google places webservice for restuarants
+function addMarkers(query){
+    var service = new google.maps.places.PlacesService(map);
+    service.textSearch({
+        location: map.getCenter(),
+        radius: 500,
+        query: [query]
+    }, function(results, status){
+        if (status === google.maps.places.PlacesServiceStatus.OK){
+        for (var i = 0; i < results.length; i++) {
+            addMarker(results[i]);
+        }
+    }
+    });
+}
+
+function deleteMarkers(){
+    for (var i = 0; i < markers.length; i++){
+        markers[i].setMap(null);
+    }
+    markers = [];
+}
+
+    //add marker to the map based on latitude & longitude (geometry)
+function addMarker(place) {
+  var placeLoc = place.geometry.location;
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location
+  });
+
+    //add info box upon click to markers on map
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent("<img src=\"" + place.icon + "\"> <br><h1>" + place.name + "</h1><p>" + place.formatted_address + "</p>" + "Google Rating: " + place.rating + "</p>");
+    infowindow.open(map, this);
+  });
+
+  markers.push(marker);
 }
