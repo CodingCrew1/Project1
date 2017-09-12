@@ -5,6 +5,7 @@ body {
   /*background-image: url('https://i.pinimg.com/originals/72/af/75/72af7584e8173a87eb5e457f066c14a8.jpg');
   */
 }
+/*id that will have tooltip*/
 #title {
   overflow: hidden;
   text-overflow: ellipsis;

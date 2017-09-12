@@ -114,6 +114,15 @@ function updateSearchResults(events) {
                 var title = events[i].title;
                 var pHeader = $("<H2 id='title'>").text(title);
                 eventDivNarrow.append(pHeader);
+                //tooltip
+                /*$('#tooltip').tooltipster({
+                    content: $('#title'),
+                    contentCloning: false,
+                    template: '<div class="tooltip" role="tooltip" rel="tooltip" data-toggle="tooltip" data-html="true">',
+                    'selector': '',
+                    'placement': 'top',
+                    'container':'body'
+                });*/
             }
             if (events[i].start_time != null) {
                 var startTime = events[i].start_time;
@@ -149,3 +158,12 @@ function updateSearchResults(events) {
     }
 
 }
+//tooltip
+/*$(document).ready(function() {
+    $('.tooltip').tooltipster({
+        functionInit: function(instance, helper){
+            var content = $(helper.origin).find('.tooltip_content').detach();
+            instance.content(content);
+        }
+    });
+});*/
