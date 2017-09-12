@@ -1,15 +1,8 @@
 body {
-  /*background: white;*/
-  /*background-image: url('https://t3.ftcdn.net/jpg/01/38/06/92/500_F_138069241_UK1jK2iIpsKiRrseeCdAoF6ODNxgN3Ui.jpg');
-  */
   /*background: #FFFAF7;*/
-  /*background-image: url('https://s3-eu-west-1.amazonaws.com/surfaceview/images/2327/original/TEX0050_websource.jpg');
-  */
   background-image: url('https://ak5.picdn.net/shutterstock/videos/14795113/thumb/1.jpg?i10c=img.resize(height:160)');
   
-  /*background-image: url('https://images.megapixl.com/192/1926307.jpg');
-  */
-  /*background-image: url('https://images.freecreatives.com/wp-content/uploads/2015/05/wildtextures_white-brick-wall.jpg');
+  /*background-image: url('https://i.pinimg.com/originals/72/af/75/72af7584e8173a87eb5e457f066c14a8.jpg');
   */
 }
 #title {
@@ -62,9 +55,9 @@ a:hover {
   left: 0;
   top: 0;
   width: 100%;
- /* height: 100%;*/
+  height: 100%;
   z-index: 2;
-  opacity: 0.4;
+  opacity: 0.8;
   /*border-radius: 25px;*/
   background-color: #ffffff;
   overflow: hidden;
