@@ -1,65 +1,62 @@
-/*$(document).ready(function(){
-// Initialize Firebase 
-var config = { apiKey: "AIzaSyDx7w0AdjWIHAawYuRdcOfOCSi3KM6evXo", 
-authDomain: "cwrucbproject.firebaseapp.com", 
-databaseURL: "https://cwrucbproject.firebaseio.com", 
-projectId: "cwrucbproject", 
-storageBucket: "", 
-messagingSenderId: "1056549983679" }; 
-firebase.initializeApp(config);   
-var database = firebase.database();
-// return false; 
-  
-//  Created a firebase event listner for adding user data to database 
-  database.ref().on("child_added", function(childSnapshot) {
-  console.log(childSnapshot.val());
- 
- var email = childSnapshot.val().email;
- 
-    function register(email){
-    reg.createUser({
-      email: email
-          }, function(error, userData){
-      if(error){
-        alert("You did not register");
-      }else{
-        alert("You registered"+userData.uid);
-      }
-   });
- 
- 
- $("#emailSubmit").on("click", function(event) {
-    event.preventDefault();
- 
- var emailSubmit = $("#emailSubmit").val().trim();  
- 
- // uploads user inputed data to the database
-  database.ref().push(email.submitInfo); 
-  console.log(email.submitInfo); 
-  });*/
-
+ $(document).ready(function(){
+            // Initialize Firebase 
+            var config = { 
+                apiKey: "AIzaSyDx7w0AdjWIHAawYuRdcOfOCSi3KM6evXo", 
+                authDomain: "cwrucbproject.firebaseapp.com", 
+                databaseURL: "https://cwrucbproject.firebaseio.com", 
+                projectId: "cwrucbproject", 
+                storageBucket: "", 
+                messagingSenderId: "1056549983679" 
+            }; 
+            firebase.initializeApp(config);   
+            var database = firebase.database();
+            $("#email").change(function(){
+                    validate($("#email").val());
+                    // console.log($("#email").val());
+            })
+             
+            function validateEmail(email) {
+              var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+              return re.test(email);
+            }
+            function validate() {
+              $("#result").text("");
+              var email = $("#email").val();
+              if (validateEmail(email)) {
+                $("#result").text(email + " is valid :)");
+                $("#result").css("color", "green");
+              } else {
+                $("#result").text(email + " is not valid :(");
+                $("#result").css("color", "red");
+              }
+              return false;
+            }
+            $("#validate").bind("click", validate);     
+            $("#emailbuttonSubmit").on("click", function(event) {
+                event.preventDefault();
+                var emailSubmit = $("#email").val().trim();  
+                // uploads user inputed data to the database
+                database.ref().push({email:emailSubmit}); 
+                console.log(email); 
+                console.log(emailSubmit);
+            });
+        // });
 var randomCities = ["Cleveland", "Pittsburgh", "Chicago", "Detroit", "San Antonio", "Los Angeles"];
-var randomKeywords = ["comedy", "concerts", "food","sports"];
-
+var randomKeywords = ["comedy", "concerts", "conferences", "festivals", "food", "family", "nightlife", "sports"];
 var generateRandomCity = function() {
     return randomCities[Math.floor(Math.random() * randomCities.length)];
 };
 var randomCity = generateRandomCity();
-
 var generateRandomKeyword = function() {
     return randomKeywords[Math.floor(Math.random() * randomKeywords.length)];
 };
 var randomKeyword = generateRandomKeyword();
-
 eventSearch(randomCity, randomKeyword, "Next Week");
-
 $("#submitInfo").on("click", function(event) {
     event.preventDefault();
-
     var eventLocation = $("#eventLocation").val().trim();
     var eventKeywords = $("#categoriesDropDown :selected").text();
     var eventDate = $("#dateDropDown :selected").text();
-
     console.log(eventDate);
     eventSearch(eventLocation, eventKeywords, eventDate);
     var event = {
@@ -86,14 +83,12 @@ function eventSearch(location, keywords, date) {
         } else {
             updateSearchResults(data.events.event);
         }
-
     });
 }
-
 function updateSearchResults(events) {
     $("#searchResultsRow").empty();
     console.log(events);
-    var loopCount = 8;
+    var loopCount = 4;
     if (events.length < loopCount) {
         loopCount = events.length;
     }
@@ -101,7 +96,6 @@ function updateSearchResults(events) {
         (function(i) {
             var eventDiv = $("<div class='event col-lg-3 col-md-4 col-sm-6 portfolio-item'>");
             var eventDivNarrow = $("<div id='belowPhoto' class='well col-lg-11 col-md-11 col-sm-11 portolio-item'>");
-
             console.log(events[i].title, events[i].id);
             if (events[i].image != null) {
                 var imgUrl = events[i].image.medium.url;
@@ -114,15 +108,6 @@ function updateSearchResults(events) {
                 var title = events[i].title;
                 var pHeader = $("<H2 id='title'>").text(title);
                 eventDivNarrow.append(pHeader);
-                //tooltip
-                /*$('#tooltip').tooltipster({
-                    content: $('#title'),
-                    contentCloning: false,
-                    template: '<div class="tooltip" role="tooltip" rel="tooltip" data-toggle="tooltip" data-html="true">',
-                    'selector': '',
-                    'placement': 'top',
-                    'container':'body'
-                });*/
             }
             if (events[i].start_time != null) {
                 var startTime = events[i].start_time;
@@ -151,19 +136,9 @@ function updateSearchResults(events) {
                 window.location = "details.html?id=" + events[i].id;
             });
             eventDivNarrow.append(button);
-
             eventDiv.append(eventDivNarrow);
             $("#searchResultsRow").append(eventDiv);
         })(index);
     }
-
 }
-//tooltip
-/*$(document).ready(function() {
-    $('.tooltip').tooltipster({
-        functionInit: function(instance, helper){
-            var content = $(helper.origin).find('.tooltip_content').detach();
-            instance.content(content);
-        }
-    });
-});*/
+});
