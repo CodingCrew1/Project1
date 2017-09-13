@@ -106,7 +106,7 @@ function updateSearchResults(events) {
             }
             if (events[i].title != null) {
                 var title = events[i].title;
-                var pHeader = $("<H2 id='title'>").text(title);
+                var pHeader = $("<H2 id='title' title='" + title + "'>").text(title);
                 eventDivNarrow.append(pHeader);
             }
             if (events[i].start_time != null) {
