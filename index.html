@@ -13,6 +13,14 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+    <!-- pasted from jquery ui source -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('#title').tooltip();
+        });
+    </script>
 </head>
 <body>
     <!-- Master header -->
@@ -36,11 +44,8 @@
                         <div class="container">
                             <div class="navbar">
                                 <!-- <div class="navbar-collapse collapse"> -->
-                                <ul class="nav navbar-nav">
                                     <!-- <ul class="nav pull-right navbar-nav"> -->
                                     <form class="navbar-form form-inline">
-                                        <li>
-                                            <h1 id="find" class="py-5" title="find an event in your chosen city">Find Events</h1>
                                             <!-- input boxes -->
                                             <!-- Event categories -->
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -74,7 +79,6 @@
                                             </button>
                                         </li>
                                     </form>
-                                </ul>
                             </div>
                         </div>
                     </div>
@@ -123,7 +127,7 @@
     <br>
     <br>
     <!--email-input-->
-    <section>
+    
         <div class="container">
             <div class="row">
                 <div class=" col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 ">
@@ -148,7 +152,7 @@
                 </div>
             </div>
         </div>
-    </section>
+ </div>
     <!-- Footer -->
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

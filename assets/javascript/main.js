@@ -35,7 +35,7 @@ $(document).ready(function() {
     }
 
     $("#validate").bind("click", validate);
-    
+
     $("#emailbuttonSubmit").on("click", function(event) {
         event.preventDefault();
         var emailSubmit = $("#email").val().trim();
@@ -78,7 +78,7 @@ $(document).ready(function() {
             date: date,
             app_key: "3wKwrHtr35ZbcRWR"
         };
-     //ajax call to eventful api   
+        //ajax call to eventful api   
         EVDB.API.call("/events/search", searchQueryParams, function(data) {
             console.log(data.events);
             if (data.events === null) {
