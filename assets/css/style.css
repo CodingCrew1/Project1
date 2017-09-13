@@ -241,16 +241,16 @@ img {
 
 
 .buttons button{
-  background-color: #F9F9F9;
+  background-color: #d5acef;
   border:none;
   height: 60px;
   color:black;
-  font-weight: 100;
+  font-weight: bold;
   width: 100px;
   margin-right: 5px;
 }
 .buttons button:hover{
-  background-color: #F0f0f0;
+  background-color: #b682d6;
   cursor:pointer;
 }
 
