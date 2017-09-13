@@ -96,7 +96,6 @@ a:hover {
   color: black;
   z-index: 3;
   position: relative;
-  height: 500px;
 }
 .footer-container {
 	background: purple;
