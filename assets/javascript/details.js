@@ -1,18 +1,54 @@
+ // Initialize Firebase 
+            var config = { 
+                apiKey: "AIzaSyDx7w0AdjWIHAawYuRdcOfOCSi3KM6evXo", 
+                authDomain: "cwrucbproject.firebaseapp.com", 
+                databaseURL: "https://cwrucbproject.firebaseio.com", 
+                projectId: "cwrucbproject", 
+                storageBucket: "", 
+                messagingSenderId: "1056549983679" 
+            }; 
+            firebase.initializeApp(config);   
+            var database = firebase.database();
+            $("#email").change(function(){
+                    validate($("#email").val());
+                    // console.log($("#email").val());
+            })
+             
+            function validateEmail(email) {
+              var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+              return re.test(email);
+            }
+            function validate() {
+              $("#result").text("");
+              var email = $("#email").val();
+              if (validateEmail(email)) {
+                $("#result").text(email + " is valid :)");
+                $("#result").css("color", "green");
+              } else {
+                $("#result").text(email + " is not valid :(");
+                $("#result").css("color", "red");
+              }
+              return false;
+            }
+            $("#validate").bind("click", validate);     
+            $("#emailbuttonSubmit").on("click", function(event) {
+                event.preventDefault();
+                var emailSubmit = $("#email").val().trim();  
+                // uploads user inputed data to the database
+                database.ref().push({email:emailSubmit}); 
+                console.log(email); 
+                console.log(emailSubmit);
+            });
 loadEventDetails(getParameterByName("id"));
-
 function loadEventDetails(eventId) {
-
     var eventQueryParams = {
         id: eventId,
         app_key: "3wKwrHtr35ZbcRWR"
     }
     EVDB.API.call("/events/get", eventQueryParams, function(data) {
-
         updateEventDetails(data);
     });
-
 }
-
 function updateEventDetails(details) {
     console.log(details);
     if (details.title != null) {
@@ -54,13 +90,10 @@ function updateEventDetails(details) {
         $("#imageEvent").attr("src", imgUrl);
     } else {
        $("#imageEvent").attr("src", "assets/image/nophotoavailable.png");
-
     }
-
     var latitude = Number(details.latitude);
     var longitude = Number(details.longitude);
 };
-
 //found this function on stackoverflow to get values from query string   
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -71,13 +104,10 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
-
 //// begin map portion of page////
-
 var map;
 var markers = [];
 var infowindow;
-
 // map options
 function initMap(){
             //var loc = {lat: position.coords.latitude,lng: position.coords.longitude};
@@ -86,7 +116,6 @@ function initMap(){
                 //center:{lat: 41.4993, lng: -81.6944},
                 zoom: 3
             });
-
 // new map
 function makeMarker(latitude, longitude) {
     var position = {lat: latitude,lng: longitude};
@@ -94,45 +123,36 @@ function makeMarker(latitude, longitude) {
  
  markers.push(marker1);
 }
-
             infowindow = new google.maps.InfoWindow();
      
 }
-
-
 // identify type of food to load upon user selection
 $(document).ready(function(){
     $("#fast").click(function(){
         deleteMarkers();
         addMarkers("fast food");
     });
-
     $("#happy").click(function(){
         deleteMarkers();
         addMarkers("happy hour");
     });
-
     $("#asian").click(function(){
         deleteMarkers();
         addMarkers("asian food");
     });
-
     $("#italian").click(function(){
         deleteMarkers();
         addMarkers("italian food");
     });
-
     $("#mex").click(function(){
         deleteMarkers();
         addMarkers("mexican food");
     });
-
     $("#drunk").click(function(){
         deleteMarkers();
         addMarkers("late night diners");
     });
 });
-
 //function callback to Google places webservice for restuarants
 function addMarkers(query){
     var service = new google.maps.places.PlacesService(map);
@@ -148,14 +168,12 @@ function addMarkers(query){
     }
     });
 }
-
 function deleteMarkers(){
     for (var i = 0; i < markers.length; i++){
         markers[i].setMap(null);
     }
     markers = [];
 }
-
     //add marker to the map based on latitude & longitude (geometry)
 function addMarker(place) {
   var placeLoc = place.geometry.location;
@@ -163,12 +181,10 @@ function addMarker(place) {
     map: map,
     position: place.geometry.location
   });
-
     //add info box upon click to markers on map
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent("<img src=\"" + place.icon + "\"> <br><h1>" + place.name + "</h1><p>" + place.formatted_address + "</p>" + "Google Rating: " + place.rating + "</p>");
     infowindow.open(map, this);
   });
-
   markers.push(marker);
 }
