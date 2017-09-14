@@ -112,7 +112,7 @@ $(document).ready(function() {
                 }
                 if (events[i].title != null) {
                     var title = events[i].title;
-                    var pHeader = $("<H2 id='title'>").text(title);
+                    var pHeader = $("<H2 class='title' title='"+ title +"''>").text(title);
                     eventDivNarrow.append(pHeader);
                 }
                 if (events[i].start_time != null) {
@@ -144,6 +144,7 @@ $(document).ready(function() {
                 eventDivNarrow.append(button);
                 eventDiv.append(eventDivNarrow);
                 $("#searchResultsRow").append(eventDiv);
+                $('.title').tooltip();
             })(index);
         }
     }
