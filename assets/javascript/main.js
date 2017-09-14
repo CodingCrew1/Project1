@@ -1,49 +1,45 @@
-$(document).ready(function() {
-    // Initialize Firebase 
-    var config = {
-        apiKey: "AIzaSyDx7w0AdjWIHAawYuRdcOfOCSi3KM6evXo",
-        authDomain: "cwrucbproject.firebaseapp.com",
-        databaseURL: "https://cwrucbproject.firebaseio.com",
-        projectId: "cwrucbproject",
-        storageBucket: "",
-        messagingSenderId: "1056549983679"
-    };
-    firebase.initializeApp(config);
-    var database = firebase.database();
-    $("#email").change(function() {
-        validate($("#email").val());
-        // console.log($("#email").val());
-    })
-
-    function validateEmail(email) {
-        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(email);
-    }
-
-    function validate() {
-        $("#emailValidationResult").text("");
-        var email = $("#email").val();
-        if (validateEmail(email)) {
-            $("#email").val('');
-            $("#emailValidationResult").text(email + " is valid :)");
-            $("#emailValidationResult").css("color", "green");
-        } else {
-            $("#emailValidationResult").text(email + " is not valid :(");
-            $("#emailValidationResult").css("color", "red");
-        }
-        return false;
-    }
-
-    $("#validate").bind("click", validate);
-
-    $("#emailbuttonSubmit").on("click", function(event) {
-        event.preventDefault();
-        var emailSubmit = $("#email").val().trim();
-        // uploads user inputed data to the database
-        database.ref().push({ email: emailSubmit });
-        console.log(email);
-        console.log(emailSubmit);
-    });
+$(document).ready(function(){
+            // Initialize Firebase 
+            var config = { 
+                apiKey: "AIzaSyDx7w0AdjWIHAawYuRdcOfOCSi3KM6evXo", 
+                authDomain: "cwrucbproject.firebaseapp.com", 
+                databaseURL: "https://cwrucbproject.firebaseio.com", 
+                projectId: "cwrucbproject", 
+                storageBucket: "", 
+                messagingSenderId: "1056549983679" 
+            }; 
+            firebase.initializeApp(config);   
+            var database = firebase.database();
+            $("#email").change(function(){
+                    validate($("#email").val());
+                    // console.log($("#email").val());
+            })
+             
+            function validateEmail(email) {
+              var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+              return re.test(email);
+            }
+            function validate() {
+              $("#result").text("");
+              var email = $("#email").val();
+              if (validateEmail(email)) {
+                $("#result").text(email + " is valid :)");
+                $("#result").css("color", "green");
+              } else {
+                $("#result").text(email + " is not valid :(");
+                $("#result").css("color", "red");
+              }
+              return false;
+            }
+            $("#validate").bind("click", validate);     
+            $("#emailbuttonSubmit").on("click", function(event) {
+                event.preventDefault();
+                var emailSubmit = $("#email").val().trim();  
+                // uploads user inputed data to the database
+                database.ref().push({email:emailSubmit}); 
+                console.log(email); 
+                console.log(emailSubmit);
+            });
     //random events loading on the page
     var randomCities = ["Cleveland", "Pittsburgh", "Chicago", "Detroit", "San Antonio", "Los Angeles"];
     var randomKeywords = ["comedy", "concerts", "food", "family", "sports"];
@@ -90,7 +86,6 @@ $(document).ready(function() {
             }
         });
     }
-
     function updateSearchResults(events) {
         $("#searchResultsRow").empty();
         console.log(events);
