@@ -5,11 +5,34 @@ body {
   /*background-image: url('https://i.pinimg.com/originals/72/af/75/72af7584e8173a87eb5e457f066c14a8.jpg');
   */
 }
-/*id that will have tooltip*/
-#title {
+/*class that will have tooltip*/
+.title {
   overflow: hidden;
   text-overflow: ellipsis;
   max-height: 96px;
+}
+/* Tooltip container */
+.tooltip {
+  background: purple;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; 
+}
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background: purple;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+/* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+}
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 .home-return{
 	color: black;
@@ -71,7 +94,7 @@ a:hover {
   background-size: cover;
 }
 #belowPhoto:before {
-  height: 500px;
+  height: 550px;
 }
 #belowPhoto,
 #belowPhoto img,
@@ -90,7 +113,7 @@ a:hover {
   position: relative;
 }
 #belowPhoto {
-  height: 500px;
+  height: 550px;
 }
 #eventDescriptionRow {
   color: black;
