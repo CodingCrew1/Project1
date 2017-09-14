@@ -1,7 +1,8 @@
 body {
   /*background: #FFFAF7;*/
   background-image: url('https://ak5.picdn.net/shutterstock/videos/14795113/thumb/1.jpg?i10c=img.resize(height:160)');
-  
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   /*background-image: url('https://i.pinimg.com/originals/72/af/75/72af7584e8173a87eb5e457f066c14a8.jpg');
   */
 }
@@ -124,9 +125,9 @@ a:hover {
   position: relative;
 }
 .footer-container {
-	background: purple;
+	background: #854BB6;
 	color: white;
-	border: 2px purple solid;
+	border: 2px #854BB6 solid;
 	font-family:lucida;
 }
 .email-form {
@@ -241,21 +242,21 @@ img {
 }
 
 .food-options{
-  width: 450px;
-  height: 100px;
+  width: 550px;
+  height: 110px;
   padding: 1%;
   background-color:white;
 }
 
 #map{
-  height: calc(100% - 60px);
+  height: calc(100%);
 }
 
 .buttons h4{
   text-align: left;
   display: flex;
-  font-family: Georgia;
-  font-size: 16px;
+  font-family: arial;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -268,6 +269,7 @@ img {
 .buttons button{
   background-color: #d5acef;
   border:none;
+  font-family: arial;
   height: 60px;
   color:black;
   font-weight: bold;
@@ -278,4 +280,3 @@ img {
   background-color: #b682d6;
   cursor:pointer;
 }
-

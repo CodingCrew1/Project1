@@ -1,50 +1,6 @@
- // Initialize Firebase 
- var config = {
-     apiKey: "AIzaSyDx7w0AdjWIHAawYuRdcOfOCSi3KM6evXo",
-     authDomain: "cwrucbproject.firebaseapp.com",
-     databaseURL: "https://cwrucbproject.firebaseio.com",
-     projectId: "cwrucbproject",
-     storageBucket: "",
-     messagingSenderId: "1056549983679"
- };
+ $(document).ready(function() {
 
- firebase.initializeApp(config);
- var database = firebase.database();
- $("#email").change(function() {
-     validate($("#email").val());
-     // console.log($("#email").val());
- })
-
- function validateEmail(email) {
-     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-     return re.test(email);
- }
-
- function validate() {
-     $("#emailValidationResult").text("");
-     var email = $("#email").val();
-     if (validateEmail(email)) {
-         $("#email").val('');
-         $("#emailValidationResult").text(email + " is valid :)");
-         $("#emailValidationResult").css("color", "green");
-     } else {
-         $("#emailValidationResult").text(email + " is not valid :(");
-         $("#emailValidationResult").css("color", "red");
-     }
-     return false;
- }
-
- $("#validate").bind("click", validate);
- 
- $("#emailbuttonSubmit").on("click", function(event) {
-     event.preventDefault();
-     var emailSubmit = $("#email").val().trim();
-     // uploads user inputed data to the database
-     database.ref().push({ email: emailSubmit });
-     console.log(email);
-     console.log(emailSubmit);
- });
-
+        });
  loadEventDetails(getParameterByName("id"));
 
  function loadEventDetails(eventId) {
@@ -54,6 +10,7 @@
      }
      EVDB.API.call("/events/get", eventQueryParams, function(data) {
          updateEventDetails(data);
+         initMap(data);
      });
  }
 
@@ -92,15 +49,7 @@
          var pTwo = $("<H3>").text(venue);
          $("#eventDetails").after(pTwo);
      }
-     if (details.images != null) {
-         console.log(details.images.image);
-         var imgUrl = details.images.image.medium.url;
-         $("#imageEvent").attr("src", imgUrl);
-     } else {
-         $("#imageEvent").attr("src", "assets/image/nophotoavailable.png");
-     }
-     var latitude = Number(details.latitude);
-     var longitude = Number(details.longitude);
+     
  };
  //found this function on stackoverflow to get values from query string   
  function getParameterByName(name, url) {
@@ -116,24 +65,41 @@
  var map;
  var markers = [];
  var infowindow;
- // map options
- function initMap() {
-     //var loc = {lat: position.coords.latitude,lng: position.coords.longitude};
-     map = new google.maps.Map(document.getElementById('map'), {
-         center: { lat: 39.828127, lng: -98.579404 },
-         //center:{lat: 41.4993, lng: -81.6944},
-         zoom: 3
-     });
-     // new map
-     function makeMarker(latitude, longitude) {
-         var position = { lat: latitude, lng: longitude };
-         var marker1 = new google.maps.Marker({ position: position, map: map });
+ // call map from google API and identify map options
+ 
+ function initMap(coords) {
+    
+    if (coords.longitude != null){
+     var lng = Number(coords.longitude); 
+    }  
 
-         markers.push(marker1);
-     }
-     infowindow = new google.maps.InfoWindow();
+    if (coords.latitude != null){
+     var lat = Number(coords.latitude);   
+    }
 
- }
+    var title = coords.title;
+    var myLatLng = {lat: lat, lng: lng};
+
+// map options
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 13,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          animation: google.maps.Animation.DROP,
+          position: myLatLng,
+          map: map,
+          icon: 'assets/image/map-marker.png',
+          title: title
+
+        });
+
+        infowindow = new google.maps.InfoWindow();
+     
+
+      }
+
  // identify type of food to load upon user selection
  $(document).ready(function() {
      $("#fast").click(function() {
@@ -161,7 +127,7 @@
          addMarkers("late night diners");
      });
  });
- //function callback to Google places webservice for restuarants
+ //function callback to Google places webservice for type of food selected
  function addMarkers(query) {
      var service = new google.maps.places.PlacesService(map);
      service.textSearch({
@@ -176,7 +142,7 @@
          }
      });
  }
-
+// delete food map markers if new food type selected
  function deleteMarkers() {
      for (var i = 0; i < markers.length; i++) {
          markers[i].setMap(null);
@@ -188,9 +154,10 @@
      var placeLoc = place.geometry.location;
      var marker = new google.maps.Marker({
          map: map,
-         position: place.geometry.location
+         position: place.geometry.location,
+         icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
      });
-     //add info box upon click to markers on map
+     //add info box with details upon click to markers on map
      google.maps.event.addListener(marker, 'click', function() {
          infowindow.setContent("<img src=\"" + place.icon + "\"> <br><h1>" + place.name + "</h1><p>" + place.formatted_address + "</p>" + "Google Rating: " + place.rating + "</p>");
          infowindow.open(map, this);
