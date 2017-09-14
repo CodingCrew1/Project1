@@ -144,8 +144,9 @@ $(document).ready(function() {
                 eventDivNarrow.append(button);
                 eventDiv.append(eventDivNarrow);
                 $("#searchResultsRow").append(eventDiv);
-                $('.title').tooltip();
+                
             })(index);
+            $('.title').tooltip();
         }
     }
 });
